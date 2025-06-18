@@ -10,7 +10,7 @@ const reasons = [
     "The way you look at me makes me feel special", // 8
     "You make ordinary days feel extraordinary.", // 9
     "You are my good luck charm", // 10
-    "You always listen and understand." // 11,
+    "You always listen and understand.", // 11,
     "Your hug makes everything feel better.", // 12
     "Your smile is enough to make my day happy", // 13
     "You make even the most boring days fun", // 14
