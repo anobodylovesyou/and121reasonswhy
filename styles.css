@@ -1,0 +1,205 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Sky background */
+.sky {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to top, #ff99cc, #ff66b2); /* Pink gradient */
+    overflow: hidden;
+}
+
+/* Heart-shaped bubbles */
+.bubble {
+    position: absolute;
+    background-image: url('images/heart.png'); /* Replace with your heart PNG path */
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    transform: rotate(0deg); /* Default, no rotation */
+    opacity: 0.9;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+}
+
+/* Bubble hover effect */
+.bubble:hover {
+    transform: scale(1.1);
+}
+
+/* Floating animation for the bubbles */
+.bubble {
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Message Box Styling */
+.message-box {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+    color: #333;
+    max-width: 80%;
+    text-align: center;
+    border-radius: 12px;
+    display: none; /* Hidden by default */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease-out, slideIn 0.6s ease-out;
+}
+
+/* Fade In animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide In animation */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Close button */
+#close-message {
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#close-message:hover {
+    background-color: #ff3399;
+}
+
+/* Bubble sizes and adjustments for mobile responsiveness */
+@media screen and (max-width: 480px) {
+    .bubble {
+        width: 18vw;
+        height: 18vw;
+        background-size: contain;
+    }
+
+    .message-box {
+        font-size: 16px;
+        padding: 20px;
+    }
+}
+
+/* Tablets and below */
+@media screen and (max-width: 768px) {
+    .bubble {
+        width: 15vw;
+        height: 15vw;
+        background-size: contain;
+    }
+
+    .message-box {
+        font-size: 18px;
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .bubble {
+        width: 12vw;
+        height: 12vw;
+        background-size: contain;
+    }
+}
+
+/* Start Page - General Styling */
+#start-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #ff99cc, #ff66b2); /* Gradient Background */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.start-message {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#start-button {
+    padding: 15px 40px;
+    background-color: #ff66b2;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#start-button:hover {
+    background-color: #ff3399;
+}
+
+/* Mobile responsiveness for Start Page */
+@media screen and (max-width: 768px) {
+    .start-message {
+        font-size: 24px;
+    }
+
+    #start-button {
+        padding: 12px 35px;
+        font-size: 18px;
+    }
+
+    .loader {
+        width: 40px;
+        height: 40px;
+    }
+}
